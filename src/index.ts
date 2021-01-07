@@ -1,8 +1,9 @@
-import * as _ from 'lodash';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const component = function (): HTMLDivElement {
     const element = document.createElement('div') as HTMLDivElement;
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = ['Hello', 'webpack'].join(' ');
     return element;
 }
 
