@@ -1,10 +1,6 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createApp } from 'vue';
+import App from './App.vue';
 
-const component = function (): HTMLDivElement {
-    const element = document.createElement('div') as HTMLDivElement;
-    element.innerHTML = ['Hello', 'webpack'].join(' ');
-    return element;
-}
-
-document.body.appendChild(component());
+createApp(App).mount('#app')
