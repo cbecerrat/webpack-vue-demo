@@ -7,6 +7,9 @@
             <button type="button" class="btn btn-secondary" @click="aboutNav">
                 About
             </button>
+            <button type="button" class="btn btn-secondary" @click="another">
+                Another
+            </button>
         </div>
         <router-view></router-view>
         <div>
@@ -16,7 +19,7 @@
 </template>
 
 <script lang="ts">
-    import { defineComponent } from "vue";
+    import { defineComponent } from 'vue';
 
     const App = defineComponent({
         data() {
@@ -31,11 +34,14 @@
         },
         methods: {
             homeNav() {
-                this.$router.push("/");
+                this.$router.push('/');
             },
             aboutNav() {
-                this.$router.push("/about");
+                this.$router.push('/about');
             },
+            another() {
+                this.$router.push('another')
+            }
         },
     });
 
