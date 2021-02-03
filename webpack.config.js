@@ -28,7 +28,7 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             }
-        ],
+        ]
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -47,5 +47,10 @@ module.exports = {
             "__VUE_OPTIONS_API__": true,
             "__VUE_PROD_DEVTOOLS__": false,
         })
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000
+    }
 };

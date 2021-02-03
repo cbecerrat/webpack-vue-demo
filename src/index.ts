@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createApp } from 'vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 
 import Home from './components/Home.vue';
@@ -13,8 +13,12 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes,
+    history: createWebHistory(),
+    routes
+});
+
+router.beforeEach((to, from) => {
+    console.log(from, to);
 });
 
 const app = createApp(App);

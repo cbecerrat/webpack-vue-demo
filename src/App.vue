@@ -9,7 +9,9 @@
             </button>
         </div>
         <router-view></router-view>
-        {{ counter }}
+        <div>
+            {{ counter }}
+        </div>
     </div>
 </template>
 
