@@ -1,17 +1,16 @@
 <template>
-    <div class="alert alert-primary" role="alert">
-        This is the vue template... check it out!
+    <div class="container">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" @click="homeNav">
+                Home
+            </button>
+            <button type="button" class="btn btn-secondary" @click="aboutNav">
+                About
+            </button>
+        </div>
+        <router-view></router-view>
+        {{ counter }}
     </div>
-
-    <p>
-        <!-- use the router-link component for navigation. -->
-        <!-- specify the link by passing the `to` prop. -->
-        <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
-        <router-link to="/">Go to Home</router-link>
-        <router-link to="/about">Go to About</router-link>
-    </p>
-    <router-view></router-view>
-    {{ counter }}
 </template>
 
 <script lang="ts">
@@ -27,6 +26,14 @@
             setInterval(() => {
                 this.counter++;
             }, 1000);
+        },
+        methods: {
+            homeNav() {
+                this.$router.push("/");
+            },
+            aboutNav() {
+                this.$router.push("/about");
+            },
         },
     });
 
