@@ -19,7 +19,8 @@
 </template>
 
 <script lang="ts">
-    import { defineComponent } from 'vue';
+    import { defineComponent } from "vue";
+    import { useStore } from "./store";
 
     const App = defineComponent({
         data() {
@@ -28,20 +29,23 @@
             };
         },
         mounted() {
+            const store = useStore();
+
             setInterval(() => {
                 this.counter++;
+                store.commit("increment");
             }, 1000);
         },
         methods: {
             homeNav() {
-                this.$router.push('/');
+                this.$router.push("/");
             },
             aboutNav() {
-                this.$router.push('/about');
+                this.$router.push("/about");
             },
             another() {
-                this.$router.push('another')
-            }
+                this.$router.push("/another");
+            },
         },
     });
 

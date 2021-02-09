@@ -1,18 +1,26 @@
 <template>
     <div class="alert alert-primary" role="alert">
-        {{ message }}
+        {{ message }} {{ count }}
     </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent } from "vue";
+    import { computed, defineComponent } from "vue";
+    import { useStore } from "../store";
 
     const Home = defineComponent({
+        setup() {
+            const store = useStore();
+
+            return {
+                count: computed(() => store.state.count),
+            };
+        },
         data() {
             return {
-                message: 'HOME',
+                message: "HOME",
             };
-        }
+        },
     });
 
     export default Home;
